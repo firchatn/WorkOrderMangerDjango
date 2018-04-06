@@ -1,0 +1,340 @@
+	{% load staticfiles %}
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<title>Work Order</title>
+	<style type="text/css">
+		table , th, td{
+			border: 1px solid black;
+			border-collapse: collapse;
+		font-family: sans-serif;
+		}
+		table {
+			width: 100%;
+		}
+		th{
+			background-color: #417690;
+			color: white;
+			/*padding: 10px;*/
+		}
+		td{
+			/*padding: 20px;*/
+			text-align: center;
+		}
+		h1 {
+			text-align: center;
+		}
+		#t1{
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+		}
+		img{
+			border: none;
+			width: 100%;
+			max-height: 100%;
+			text-align: center;
+			display: inline;
+		}
+		#headline tr td:nth-child(1),
+		#headline tr td:nth-last-child(1) {
+			width: 60px;
+		}
+		#products {
+			height: 500px;
+		}
+		#products thead tr {
+			height: 50px;
+		}
+	</style>
+	</head>
+	<body>
+
+<table id="headline">
+
+		<tr>
+
+			<td rowspan="3">
+				<img src="{% static 'logo.jpg' %}" alt="" ></img>
+			</td>
+
+			<td rowspan="2">
+				<center>
+				Integrated Management System
+				</center>
+			</td>
+
+			<td>
+PCI-FR-02-04
+			</td>
+
+		</tr>
+
+				<tr>
+		
+
+		
+
+			<td>
+12/02/2018
+			</td>
+
+		</tr>
+
+				<tr>
+			
+			<td>
+				<div id= "t1">Work Order</div>
+				Order d'Intervention
+			</td>
+
+	
+
+			<td>
+				Page 1/2
+			</td>
+
+		</tr>
+		
+</table>
+
+<br /><br />
+
+<select>
+	{% for a in wo %}
+  <option value="">{{a}}</option>
+  {% endfor %}
+
+</select>
+
+<select >
+	{% for b in clt %}
+  <option value="">{{b.nomClient}}</option>
+  {% endfor %}
+</select>
+<select>
+	{% for c in st %}
+  <option value="">{{c.nomSite}}</option>
+  {% endfor %}
+</select>
+
+<select>
+	{% for d in ct %}
+  <option value="">{{c.codCer}}</option>
+  {% endfor %}
+</select>
+<select>
+	{% for e in wo %}
+  <option value="">{{e.numBCCltWo}}</option>
+  {% endfor %}
+</select>
+<select>
+	{% for f in wo %}
+  <option value="">{{f.dateDebutWo}}</option>
+  {% endfor %}
+</select>
+
+<select>
+	{% for g in wo %}
+  <option value="">{{g.dateFinWo}}</option>
+  {% endfor %}
+</select>
+<select>
+	{% for g in wo %}
+  <option value="">{{g.typeInterventionWo}}</option>
+  {% endfor %}</select>
+<form>Job Description:</br>
+</form>
+<FORM>
+<INPUT type="checkbox" name="choix1" value="1"> Inspection
+<INPUT type="checkbox" name="choix2" value="2"> Control
+<INPUT type="checkbox" name="choix3" value="3"> Subcontracting
+</FORM>
+
+	<table id="products">
+		<thead>
+		<tr>
+			<th>Quantity</th>
+			<th>Inspection Items</th>
+			<th>Inspection Methods</th>
+		</tr>
+	</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+				<td contenteditable="true">	
+			</td>
+				<td contenteditable="true">	
+			</td>
+		</tr>
+	</table>
+	<table = id ="clients">
+		<thead>
+		<tr>
+			<th>Customer specific Requirements</th>
+		</tr>
+		</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+		</tr>	
+		
+	</table>
+	<table = id ="clients">
+		<thead>
+		<tr>
+			<th>Customer HSE Requirements</th>
+			<th>Site Requirements</th>
+		</tr>
+		</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+				<td contenteditable="true">	
+			</td>
+		</tr>	
+	</table>
+	<table  = id = "personnels">
+		<thead>
+		<tr>
+			<th>Intervention Team</th>
+		</tr>
+		<tr>
+			<th>Full name</th>
+			<tr><td></tr></td>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+		</tr>
+		<tr>
+			<td contenteditable="true">
+			</td>
+		</tr>	
+	</table>
+	<table id="equipement">
+		<thead>
+		<td>
+			<th>NecessaryEquipement</th></td>
+			<tr>
+			<th>Designation</th>
+			<th>Quantity</th>
+			<th>Certificate</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+			<td contenteditable="true">
+			</td>
+				<td contenteditable="true">	
+			</td>
+				<td contenteditable="true">	
+			</td>
+				<td contenteditable="true">	
+			</td>
+		</tr>
+	</table>
+	<table id="products">
+		<thead>
+		<td>
+			<th>NecessaryExpandable</th></td>
+			<tr>
+			<th>Designation</th>
+			<th>Quantity</th>
+			<th>LotN</th>
+			<th>Exp.Date</th>
+		</tr>
+	</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+				<td contenteditable="true">	
+			</td>
+				<td contenteditable="true">	
+			</td>
+				<td contenteditable="true">	
+			</td>
+		</tr>
+	</table>
+	<table id="products">
+		<thead>
+		<tr>
+			<th>Other Services Required</th></tr>
+			<tr><td><INPUT type="checkbox" name="choix1" value="1"> 
+			Internal Cleaning</tr></td>
+			<tr><td><INPUT type="checkbox" name="choix1" value="1"> 
+			External Cleaning</td></tr>
+			<tr><td> <INPUT type="checkbox" name="choix1" value="2"> 
+			OD Gage</td></tr>
+			<tr><td> <INPUT type="checkbox" name="choix1" value="3"> 
+			Refacing </td></tr>
+			<tr><td> <INPUT type="checkbox" name="choix1" value="4">
+			Dope</td></tr>
+			<tr><td><INPUT type="checkbox" name="choix1" value="5"> 
+			Straightening</td></tr>
+		</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+		</tr>
+	</table>
+	<table id="products">
+		<thead>
+		<tr>
+			<th>Necessary Documents</th>
+		</tr>
+	</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+		</tr>
+	</table>
+	<table id="products">
+		<thead>
+		<tr>
+			<th>Conveyance</th>
+			<th>Technical Responsible Signature</th>
+			<th>Commercial Responsible Signature</th>
+		</tr>
+	</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+			<td contenteditable="true">
+			</td>
+			<td contenteditable="true">
+			</td>
+		</tr>
+	</table>
+	<table = id ="clients">
+		<thead>
+		<tr>
+			<th>Additionnal Items Inspected</th>
+		</tr>
+		</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+		</tr>	
+		
+	</table>
+	<table = id ="clients">
+		<thead>
+		<tr>
+			<th>Attached Documents</th>
+			<tr><td><INPUT type="checkbox" name="choix1" value="1">Customer Satisfaction Form</tr></td>
+			<tr><td><INPUT type="checkbox" name="choix1" value="2">On Site OH&SE Control</td></tr>
+			<tr><td><INPUT type="checkbox" name="choix1" value="3">Lifting Equipment Inspection  OH&SE Control</td></tr>
+			<tr><td><INPUT type="checkbox" name="choix1" value="4">Others</td></tr>
+		</tr>
+		</thead>
+		<tr>
+			<td contenteditable="true">
+			</td>
+		</tr>	
+		
+	</table>
+	</body>	
+	</html>
+

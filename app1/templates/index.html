@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> demo1 django </title>
+<style type="text/css">
+	tr, td {
+		border: solid 1px;
+	}
+	#one {
+		background-color: red;
+	}
+</style>
+
+</head>
+
+<body>
+<h1> work order </h1>
+
+	<table>
+	<td id="one">
+		id Client
+	</td>
+	<td>
+		Nom Client
+	</td>
+	<td>
+		raisonSocialClt
+	</td>
+
+	<td>
+		adresseClt
+	</td>
+
+	<td>
+		emailClt
+	</td>
+
+	<td>
+		NumTelephoneClt
+	</td>
+	<td>
+		webClt
+	</td>
+	<td>
+		secteurClt
+	</td>
+	<td>
+		serviceClt
+	</td>
+	</table>
+	<table>
+	<td id="one">
+		<td>
+			{% for i in clt%}
+			<td>
+				i.codClt
+			</td>
+			<td>
+				i.nomClient	
+			</td>
+			<td>
+				i.raisonSocialClt
+			</td>
+			<td>
+				i.adresseClt
+			</td>
+			<td>
+				i.emailClt
+			</td>
+			<td>
+				i.NumTelephoneClt
+			</td>
+			<td>
+				i.webClt
+			</td>
+			<td>
+				i.secteurClt
+			</td>
+			<td>
+				i.serviceClt
+			</td>
+			<td>
+				{%endfor%}
+			</td>
+
+	</table>
+	<table>
+	<td id="one">
+		<td> 
+			IdMethode
+		</td>
+		<td>
+			 nomMethodes
+		</td>
+	</table>
+	<table>
+	<td id ="one">
+		{%for i in meins%}
+	</td>
+	<td>
+		i.codMethIns 
+	</td>
+	<td>
+		i.nomMethIns 
+	</td>
+	<td>
+		{%endfor%}
+	</td>
+	</table>
+	<table>
+	<td id="one">
+		<td>
+			IdPer 
+		</td>
+		<td>
+			numCinPer 
+		</td>
+			<td>
+				nomPer 
+			</td>
+		<td>
+			prenomPer
+		</td>  
+		<td>
+			dateNaissancePer
+		</td> 
+		<td>
+			lieuNaissancePer
+		</td> 
+		<td>
+		numTelephone1Per
+		</td> 
+		<td>
+			adressePer
+		</td>
+		<td>
+			telephoneConjoint
+		</td>
+		<td>
+			fonctionPer
+		</td> 
+		<td>
+			dateEmbauchePer 
+		</td>
+		<td>
+			numPassportPer
+		</td>  
+		<td>
+			dateFinPassportPer
+		</td>  
+		<td>
+			permisConduitePer
+		</td>   
+		<td>
+			dateFinPermis
+		</td> 
+		<td>
+			matCNSSPer
+		</td> 
+		<td>
+			situationFamiliale
+		</td> 
+		<td>
+			nombresEnfants
+		</td>
+	</table>
+	<table>
+	<td id="one">
+		<td>{%for j in pr%}
+		<td>
+			j.matPer 
+		</td>
+		<td>
+			j.numCinPer 
+		</td>
+			<td>
+				j.nomPer 
+			</td>
+		<td>
+			j.prenomPer
+		</td>  
+		<td>
+			j.dateNaissancePer
+		</td> 
+		<td>
+			j.lieuNaissancePer
+		</td> 
+		<td>
+		 j.numTelephone1Per
+		</td> 
+		<td>
+			j.adressePer
+		</td>
+		<td>
+			j.telephoneConjoint
+		</td>
+		<td>
+			j.fonctionPer
+		</td> 
+		<td>
+			j.dateEmbauchePer 
+		</td>
+		<td>
+			j.numPassportPer
+		</td>  
+		<td>
+			j.dateFinPassportPer
+		</td>  
+		<td>
+			j.permisConduitePer
+		</td>   
+		<td>
+			j.dateFinPermis
+		</td> 
+		<td>
+			j.matCNSSPer
+		</td> 
+		<td>
+			j.situationFamiliale
+		</td> 
+		<td>
+			j.nombresEnfants
+		</td>
+		<td>{%endfor%}</td>
+	</table>
+	</table>
+	<table>
+	<td id="one">
+		<td>
+			{%for j in wo%}
+		</td>
+		<td>j.numeroWo</td>
+		<td>j.numeroRapportWo</td>
+		<td>j.numeroCertificatWo</td>
+		<td>j.numBCCltWo </td>
+		<td>j.dateDebutWo</td> 
+		<td>j.dateFinWo </td>
+		<td>j.typeInterventionWo</td> 
+		<td>j.sousTranitanceWo</td> 
+		<td>j.exigenceSpecifiqueCltWo</td> 
+		<td>j.exigenceHSECltWo </td>
+		<td>j.CSFWo </td>
+		<td>j.onSiteControleWo</td> 
+		<td>j.liftingWo </td>
+		<td>{%endfor%}</td>
+	</table>
+	<table>
+		<td>numeroWo</td>
+		<td>numeroRapportWo</td>
+		<td>numeroCertificatWo</td>
+		<td>numBCCltWo</td> 
+		<td>dateDebutWo</td>
+		<td>dateFinWo</td>
+		<td>typeInterventionWo</td> 
+		<td>sousTranitanceWo</td>
+		<td>exigenceSpecifiqueCltWo</td> 
+		<td>exigenceHSECltWo</td>
+		<td>CSFWo</td>
+		<td>onSiteControleWo</td>
+		<td>liftingWo</td>
+	<table>
+</table>
+<table>
+	<td>codEqp  </td>
+	<td>qrCode </td>
+	<td>numeroLot</td> 
+	<td>dateExpiration</td>
+	<td>dateFabEqp </td>
+	<td>dateFinEqp </td>
+	<td>dateAchatEqp </td>
+	<td>calibrationPeriodeEqp  </td>
+	<td>calibrationDateEqp </td>
+	<td>dateProchaineDisponibiliteEqp </td>
+	<td>emplacementEqp </td>
+	<td>etatEqp </td>
+	<td>dateEtatEqp </td>
+	<td>designationEqp </td>
+</table>
+<table>
+	<td> {%for k in eq%}</td>
+	<td>k.codEqp  </td>
+	<td>k.qrCode </td>
+	<td>k.numeroLot</td> 
+	<td>k.dateExpiration</td>
+	<td>k.dateFabEqp </td>
+	<td>k.dateFinEqp </td>
+	<td>k.dateAchatEqp </td>
+	<td>k.calibrationPeriodeEqp  </td>
+	<td>k.calibrationDateEqp </td>
+	<td>k.dateProchaineDisponibiliteEqp </td>
+	<td>k.emplacementEqp </td>
+	<td>k.etatEqp </td>
+	<td>k.dateEtatEqp </td>
+	<td>k.designationEqp </td>
+	<td>{%endfor%}</td>
+</table>
+	<table>
+		<td>codCons </td>
+		<td>qrCodeCons</td> 
+		<td>dateExpirationCons </td>
+		<td>planifierCons</td>
+		<td>designationCons </td>
+	</table>
+	<table>
+		<td> {%for h in con%}</td>
+		<td>h.codCons </td>
+		<td>h.qrCodeCons</td> 
+		<td>h.dateExpirationCons </td>
+		<td>h.planifierCons</td>
+		<td>h.designationCons </td>
+		<td>{%endfor%}</td>
+	</table>
+	<table>
+	<td>codEqp</td>  
+	<td>planifierEqp </td>
+	<td>designationEqp </td>
+</table>
+<table>
+	<td> {%for l in eqi%}</td>
+	<td>l.codEqp</td>  
+	<td>l.planifierEqp </td>
+	<td>l.designationEqp </td>
+	<td>{% endfor%}</td>
+</table>
+<table>
+	<td>codSite  </td>
+	<td>nomSite  </td>
+	<td>typeSite  </td>
+	<td>urlSite </td>
+</table>
+	<table>
+	<td> {% for l in st %}</td>
+	<td>l.codSite  </td>
+	<td>l.nomSite  </td>
+	<td>l.typeSite  </td>
+	<td>l.urlSite </td>
+	<td>{% endfor %}</td>
+	</table>
+
+	<table>
+	<td>e.codSer </td>
+	<td>e.nomSer </td>
+	<td>e.typeSer</td>
+	</table>
+
+	<table>
+	<td> {% for e in sr %}</td>
+	<td>e.codSer </td>
+	<td>e.nomSer </td>
+	<td>e.typeSer</td>
+	<td>{% endfor %}</td>
+	</table>
+
+</body>	
+</html>
+
